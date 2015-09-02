@@ -30,6 +30,7 @@ nodebb-backup
 # Unpacking 
 
 mkdir -p unpackedbackup
+
 tar -xvf nodebb-backup-2015-09-01_1511-v0.7.3.tar -C !$
 
 # Restoring db (from inside unpacked directory)

@@ -27,3 +27,12 @@ nodebb-backup
 - Be able to provide a path to place the resulting back up file
 - Maybe be able to restore from a provided tar file?
 
+# Unpacking 
+
+mkdir -p unpackedbackup
+tar -xvf nodebb-backup-2015-09-01_1511-v0.7.3.tar -C !$
+
+# Restoring db (from inside unpacked directory)
+
+Example:
+mongorestore -d nodebb -u username -p password --dir=nodebb --host=127.0.0.1:27017

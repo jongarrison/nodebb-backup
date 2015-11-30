@@ -25,15 +25,13 @@ nodebb-backup
 # Needed Features (please send me feedback)
 
 - Be able to provide a path to place the resulting back up file
+- Redis support
 - Maybe be able to restore from a provided tar file?
 
-# Unpacking 
+# Unpacking tar to new directory, 'unpackeddir'
 
-mkdir -p unpackedbackup
+mkdir -p unpackeddir; tar -xvf nodebb-backup-2015-11-10_1532-v0.8.2.tar -C $_
 
-tar -xvf nodebb-backup-2015-09-01_1511-v0.7.3.tar -C !$
+# Restoring db (from inside unpacked directory created above)
 
-# Restoring db (from inside unpacked directory)
-
-Example:
-mongorestore -d nodebb -u username -p password --dir=nodebb --host=127.0.0.1:27017
+mongorestore -d nodebb -u username -p password --dir=unpackeddir/nodebb --host=127.0.0.1:27017

@@ -1,6 +1,6 @@
 {
   "name": "nodebb-backup",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple backup script based on https://docs.nodebb.org/vi/latest/upgrading/",
   "main": "index.js",
   "scripts": {

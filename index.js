@@ -95,7 +95,7 @@ nodeCLI.exec(
 
 
 //---------------------------------------------
-//Get the uploaded avatars
+//Get the uploaded files, including avatars
 //---------------------------------------------
 
 
@@ -112,7 +112,6 @@ fs.copySync(uploadPath, backUploadPath);
 
 
 var timeString = moment().format("YYYY-MM-DD_HHmm");
-
 
 var backupFileName = "nodebb-backup-" + timeString + "-v" + package.version + ".tar";
 var outputFilePath = path.join(pwd, "..", backupFileName);

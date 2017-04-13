@@ -1,0 +1,117 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/jon/.nvm/versions/node/v6.9.1/bin/node',
+1 verbose cli   '/Users/jon/.nvm/versions/node/v6.9.1/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@3.10.8
+3 info using node@v6.9.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/jon/workspace_js/nodebb-backup',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/jon/.npm/nodebb-backup/0.1.1/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/jon/.npm correctMkdir not in flight; initializing
+10 info lifecycle nodebb-backup@0.1.1~prepublish: nodebb-backup@0.1.1
+11 silly lifecycle nodebb-backup@0.1.1~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/Users/jon/.npm/nodebb-backup/0.1.1/package.tgz',
+12 verbose tar pack   '/Users/jon/workspace_js/nodebb-backup' ]
+13 verbose tarball /Users/jon/.npm/nodebb-backup/0.1.1/package.tgz
+14 verbose folder /Users/jon/workspace_js/nodebb-backup
+15 verbose addLocalTarball adding from inside cache /Users/jon/.npm/nodebb-backup/0.1.1/package.tgz
+16 verbose correctMkdir /Users/jon/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd nodebb-backup@0.1.1
+18 verbose afterAdd /Users/jon/.npm/nodebb-backup/0.1.1/package/package.json not in flight; writing
+19 verbose correctMkdir /Users/jon/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /Users/jon/.npm/nodebb-backup/0.1.1/package/package.json written
+21 silly publish { name: 'nodebb-backup',
+21 silly publish   version: '0.1.1',
+21 silly publish   description: 'A simple backup script based on https://docs.nodebb.org/vi/latest/upgrading/',
+21 silly publish   main: 'index.js',
+21 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/jongarrison/nodebb-backup.git' },
+21 silly publish   keywords: [ 'nodebb', 'backup', 'mongo' ],
+21 silly publish   preferGlobal: true,
+21 silly publish   author: { name: 'Jon Garrison' },
+21 silly publish   license: 'ISC',
+21 silly publish   bugs: { url: 'https://github.com/jongarrison/nodebb-backup/issues' },
+21 silly publish   homepage: 'https://github.com/jongarrison/nodebb-backup#readme',
+21 silly publish   dependencies:
+21 silly publish    { async: '*',
+21 silly publish      'shelljs-nodecli': '*',
+21 silly publish      'tar-fs': '*',
+21 silly publish      'fs-extra': '*',
+21 silly publish      moment: '*' },
+21 silly publish   bin: { 'nodebb-backup': 'index.js' },
+21 silly publish   readme: '# nodebb-backup\nA simple backup script based on the steps described in https://docs.nodebb.org/vi/latest/upgrading/\n\n# Install\n\nnpm install -g nodebb-backup\n\n# Run (inside your nodebb folder)\n\nnodebb-backup\n\n# Features\n\n- Backs up the mongo database specified in NodeBB\'s config.json file\n- Backs up the nodebb/uploads directory which contains uploaded images\n- Compresses dumped db and files from /uploads into a tar with a format like this: nodebb-backup-2015-09-01_1509-v0.7.3.tar\n- Resulting tar file is saved to the directory above nodebb \n\n# Limitations\n\n- Many, it\'s pretty raw!\n- Mongo only\n- No command line options yet\n\n# Needed Features (please send me feedback)\n\n- Be able to provide a path to place the resulting back up file\n- Redis support\n- Maybe be able to restore from a provided tar file?\n\n# Unpacking tar to new directory, \'unpackeddir\'\n\nmkdir -p unpackeddir; tar -xvf nodebb-backup-2015-11-10_1532-v0.8.2.tar -C $_\n\n# Restoring db (from inside unpacked directory created above)\n\nmongorestore -d nodebb -u username -p password --dir=unpackeddir/nodebb --host=127.0.0.1:27017',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: 'b51220128b94578e83cbdf52edfef38498c660f9',
+21 silly publish   _id: 'nodebb-backup@0.1.1',
+21 silly publish   _shasum: 'e91cd0d2a41d4e78a2680165b422a0190f398425',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name nodebb-backup
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'nodebb-backup',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'nodebb-backup',
+26 silly mapToRegistry   name: 'nodebb-backup',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/nodebb-backup
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading /Users/jon/.npm/nodebb-backup/0.1.1/package.tgz
+30 verbose request uri https://registry.npmjs.org/nodebb-backup
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 6:47:24 PM
+33 verbose request using bearer token for auth
+34 verbose request id 6404740f756ea0b3
+35 http request PUT https://registry.npmjs.org/nodebb-backup
+36 http 403 https://registry.npmjs.org/nodebb-backup
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '95',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Thu, 13 Apr 2017 01:47:25 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-sea1040-SEA',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1492048045.108171,VS0,VE760',
+37 verbose headers   vary: 'Accept-Encoding' }
+38 verbose request invalidating /Users/jon/.npm/registry.npmjs.org/nodebb-backup on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: "You cannot publish over the previously published version 0.1.1." : nodebb-backup
+40 verbose stack     at makeError (/Users/jon/.nvm/versions/node/v6.9.1/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (/Users/jon/.nvm/versions/node/v6.9.1/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+40 verbose stack     at Request._callback (/Users/jon/.nvm/versions/node/v6.9.1/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+40 verbose stack     at Request.self.callback (/Users/jon/.nvm/versions/node/v6.9.1/lib/node_modules/npm/node_modules/request/request.js:187:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (/Users/jon/.nvm/versions/node/v6.9.1/lib/node_modules/npm/node_modules/request/request.js:1044:10)
+40 verbose stack     at emitOne (events.js:96:13)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (/Users/jon/.nvm/versions/node/v6.9.1/lib/node_modules/npm/node_modules/request/request.js:965:12)
+41 verbose statusCode 403
+42 verbose pkgid nodebb-backup
+43 verbose cwd /Users/jon/workspace_js/nodebb-backup
+44 error Darwin 15.6.0
+45 error argv "/Users/jon/.nvm/versions/node/v6.9.1/bin/node" "/Users/jon/.nvm/versions/node/v6.9.1/bin/npm" "publish"
+46 error node v6.9.1
+47 error npm  v3.10.8
+48 error code E403
+49 error "You cannot publish over the previously published version 0.1.1." : nodebb-backup
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]

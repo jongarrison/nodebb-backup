@@ -83,16 +83,33 @@ fs.mkdirSync(tempBackupDir);
 
 console.log("About to backup db: " + config.mongo.database);
 
-nodeCLI.exec(
+//mongodump -d 0 -h 127.0.0.1:27017
+
+if (config.mongo.username && config.mongo.password) {
+  
+  console.log("Running back up using mongo db username and password");
+  nodeCLI.exec(
+      'mongodump',
+      '-v',
+      '-d', config.mongo.database,
+      '-u', config.mongo.username,
+      '-p', config.mongo.password,
+      '-o', tempBackupDir,
+      '-h', config.mongo.host + ":" + config.mongo.port
+  );
+  
+} else {
+  
+  console.log("Running back up WITHOUT using mongo db username and password");
+  nodeCLI.exec(
     'mongodump',
     '-v',
     '-d', config.mongo.database,
-    '-u', config.mongo.username,
-    '-p', config.mongo.password,
     '-o', tempBackupDir,
     '-h', config.mongo.host + ":" + config.mongo.port
-);
-
+  );
+  
+}
 
 //---------------------------------------------
 //Get the uploaded files, including avatars
